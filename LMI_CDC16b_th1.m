@@ -1,6 +1,6 @@
 function [M,betau,betaw]=LMI_CDC16b_th1(h,q1,q2,N,nu,epsilon,alpha,BC)
 % This MATLAB program checks the feasibility of LMIs from Theorem 1 of the paper 
-% A. Selivanov and E. Fridman, "Sampled-data relay control of semilinear diffusion PDEs," in 55th IEEE Conference on Decision and Control, 2016.
+% A. Selivanov and E. Fridman, "Sampled-data relay control of semilinear diffusion PDEs," in 55th IEEE Conference on Decision and Control, 2016, pp. 4821–4826.
 
 % The program uses YALMIP parser (http://users.isy.liu.se/johanl/yalmip/)
 % and SeDuMi solver (http://sedumi.ie.lehigh.edu/)
@@ -72,10 +72,10 @@ M=[]; betau=[]; betaw=[];
 if sol.problem == 0
     [primal,~]=check(LMIs); % Checking that the solver returned a proper solution
     if min(primal)>=0 
-        M=double(Mvar); 
-        betau=double(betauvar); 
-        betaw=double(betawvar); 
+        M=value(Mvar); 
+        betau=value(betauvar); 
+        betaw=value(betawvar); 
     end
 else
-    yalmiperror(sol.problem); 
+    yalmiperror(sol.problem) 
 end
