@@ -1,5 +1,5 @@
 % This MATLAB program checks the feasibility of LMI from Theorem 1 of the paper
-% A. Selivanov and E. Fridman, "Sampled-data relay control of semilinear diffusion PDEs," in 55th IEEE Conference on Decision and Control, 2016.
+% A. Selivanov and E. Fridman, "Sampled-data relay control of semilinear diffusion PDEs," in 55th IEEE Conference on Decision and Control, 2016, pp. 4821–4826.
 
 h=1e-3;         % the sampling period
 q1=-5;          % lower sector bound for the nonlinearity 
